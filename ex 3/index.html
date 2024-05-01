@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>ex3-js</title>
+</head>
+<body>
+<header>
+    <div class="p-3 mb-2 bg-info text-dark text-center">
+        <h1>User Registration</h1>
+        <span><b>Submitted by: Rotem Kashani and Amit Lap</b></span><br/>
+    </div>
+</header>
+
+<div class="container mt-5">
+    <div id="step1">
+        <h3>Record a new user</h3>
+        <p>Please enter user's details and click on next to proceed and complete the process:</p>
+        <form id="step1Form">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+                <div class="text-danger error-message" id="firstNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+                <div class="text-danger error-message" id="lastNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" placeholder="Enter Email">
+                <div class="text-danger error-message" id="emailError"></div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="validateStep1()" id="nextButton">Next</button>
+        </form>
+    </div>
+
+    <div id="step2" style="display:none;">
+        <h3>Record a new user</h3>
+        <p>Please enter user's details and click on save to add the user to the list:</p>
+        <form id="step2Form">
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                <div class="text-danger error-message" id="passwordError"></div>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+                <div class="text-danger error-message" id="confirmPasswordError"></div>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob">
+                <div class="text-danger error-message" id="dobError"></div>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select class="form-control" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments (max 100 characters):</label>
+                <textarea class="form-control" id="comments" rows="3" maxlength="100" placeholder="Enter Comments"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-secondary" onclick="backToStep1()" id="previousButton">Previous</button>
+            <button type="button" class="btn btn-success" onclick="saveUser()" id="saveButton">Save</button>
+        </form>
+    </div>
+
+    <div class="mt-4">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Date of Birth</th>
+                <th>Gender</th>
+                <th>Comments</th>
+            </tr>
+            </thead>
+            <tbody id="userListBody"></tbody>
+        </table>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="JS/userRegistration.js"></script>
+</body>
+</html>
