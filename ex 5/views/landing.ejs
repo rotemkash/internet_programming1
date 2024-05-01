@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body style="background-color: #ffe5b4;"> <!-- Light orange background color -->
+<header><img src="/images/yad2.png"  alt="Logo" width="100" height="100"></header>
+<button onclick="location.href='/login';">Admin Area</button>
+<button onclick="location.href='/post-new-ad';">Post New Ad</button>
+<form method="get" action="/">
+    <label for="search">Search:</label>
+    <input type="text" id="search" name="search" placeholder="Search ads by title">
+    <button type="submit">Submit</button>
+</form>
+<% if (showAllButton) { %>
+    <button onclick="location.href='/';">Show All Approved Ads</button>
+<% } %>
+<div>
+    <h2>Approved Ads:</h2>
+    <%
+    // Sort ads by createdAt in descending order
+    ads.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    ads.forEach(ad => { %>
+        <fieldset>
+            <h3><%= ad.title %></h3>
+            <p><%= ad.description %></p>
+            <p>Price: <%= ad.price %></p>
+            <p>Contact: <%= ad.phoneNumber %> | <%= ad.email %></p>
+        </fieldset>
+        <br>
+    <% }); %>
+</div>
+</body>
+</html>
