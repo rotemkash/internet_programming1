@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ex1-html</title>
+</head>
+
+<body>
+<h1>Rotem Kashani</h1>
+
+<a href="https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D">
+    <img src="https://www.ynet.co.il/PicServer4/2014/10/30/5665187/530903709317100640360no.jpg" alt="תמונה של ירושלים">
+</a>
+
+<h2>My hobbies:</h2>
+<ul>
+    <li>Sport</li>
+    <li>Read books</li>
+    <li>Music</li>
+    <li>Watch movies</li>
+</ul>
+
+<h2>Sign up for a course:</h2>
+<form action="#" method="post">
+    <label for="courseName">Course Name:</label>
+    <input type="text" id="courseName" name="courseName" required><br><br>
+
+    <label for="courseCode">Course Code (digits only):</label>
+    <input type="number" id="courseCode" name="courseCode" pattern="[0-9]+" required><br><br>
+
+    <label for="studyYear">Study Year:</label>
+    <select id="studyYear" name="studyYear" required>
+        <option value="" disabled selected>Select study year</option>
+        <option value="א">א</option>
+        <option value="ב">ב</option>
+        <option value="ג">ג</option>
+        <option value="ד">ד</option>
+    </select><br><br>
+
+    <input type="submit" value="submit">
+    <input type="reset" value="reset">
+</form>
+
+<h2>Results of part B:</h2>
+<p>Found 60 errors and 10 warnings on the page</p>
+<img src="/images/number-of-errors.png" alt="number of errors">
+<br/>
+<img src="/images/number-of-warnings.png" alt="number of warnings">
+
+<h2>Results of part C:</h2>
+<p>Orientation is defined within a list defined by li tag using a tag</p>
+<img src="/images/change-logo.png" alt="change logo">
+<p>I changed the logo of the college to the image I chose and when the page is refreshed the image I put disappears
+    and in its place returns the image of the logo entered in the code</p>
+<br/>
+<p>To display the page, 162 http requests are sent and 5 failed as shown below</p>
+<img src="/images/number-of-requests-and-failed.png" alt="number of requests">
+<img src="/images/number-of-failed.png" alt="number of failed">
+
+
+</body>
+</html>
